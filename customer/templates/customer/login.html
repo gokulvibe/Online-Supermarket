@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Shopping List</title>
+  <meta name="author" content="">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link href="{% static 'css/style1.css' %}" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Shopping List</h2>
+        <h4>Login</h4>
+        <img src="{% static 'css/img/img-01.webp' %}">
+        
+        <div class="box">
+            <form action="list.html">
+              <div class="form-group">
+                <label for="name">User Name</label>
+                <input class="form-control" id="name" placeholder="Username">
+              </div>
+              <div class="form-group">
+                <label for="pass">Password</label>
+                <input type="password" class="form-control" id="pass" placeholder="Password">
+              </div>
+              <input type="submit" class="btn btn-primary addon">
+            </form>
+        </div>
+        <a class="newAccount" href="register.html">Create a new account</a>
+    </div>
+    
+
+</body>
+
+</html>

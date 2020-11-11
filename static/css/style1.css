@@ -1,0 +1,219 @@
+/*pre css*/
+* {
+  margin: 0;
+  padding: 0; }
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit; 
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; }
+  @media only screen and (max-width: 68.75em) {
+    html {
+      font-size: 50%; } }
+
+body {
+  font-weight: 400;
+  line-height: 1.6;
+  color: #655A56;
+  background-image: linear-gradient(to right,#6E05C8, #2479FE);
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+ 
+
+/*classes*/
+.container {
+  max-width: 60%;
+  height: 100%;
+  padding: 3%;
+  margin: 4vw auto;
+  background-color: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 2rem 6rem 0.5rem rgba(101, 90, 86, 0.2);
+  align-content: center;
+}
+
+/*heading*/
+.container h2{
+    font-size: 30px;
+    padding: 20px;
+    display: block;
+    text-align: center;
+    color: #3b00ff;
+}
+
+.container h4{
+    font-size: 16px;
+    display: block;
+    text-align: center;
+    color: #747474;
+    margin: 0;
+}
+
+/*image*/
+.container img{
+    width: 40%;
+    padding-left: 50px;
+    padding-top: 50px;
+    transition: .15s ease-in-out;
+    float:left;
+}
+img:hover{
+  opacity: 0.9;
+  transform: scale(1.2);
+  transition: .15s ease-in-out;
+}
+
+/*login form*/
+.box{
+    display: inline;
+    float: left;
+    height: auto;
+    width: 50%;
+    font-size: 300%;
+    border-radius: 20px;
+    background-image: linear-gradient(to right,#6E05C8, #2479FE);
+    color: aliceblue;
+    padding: 3%;
+    margin: 5%;
+}
+
+.box .addon{
+    background-color: #d8ff00;
+    color: black;
+    border-color:#d8ff00;
+    padding: 8px;
+    font-size: 50%;
+    border-radius: 5px;
+    font-family: sans-serif;
+    font-weight: 400;
+}
+
+.newAccount{
+    font-size: 20px;
+    padding-left: 70%;
+    text-decoration: underline;
+}
+
+/*register form*/
+.register{
+    font-size: 250%;
+    width: 50%s;
+    margin: 10% 25%;
+    margin-top: 3%;
+}
+
+
+/*list*/
+.container2{
+  max-width: 80%;
+  height: auto;
+  margin: 4vw auto;
+  background-color: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 2rem 6rem 0.5rem rgba(101, 90, 86, 0.2);
+  align-content: center;
+  padding: 3%;
+}
+
+.container2 img{
+    width: 15%;
+    height: auto;
+    margin-left: 43%;
+}
+
+.mid{
+    text-align: center;
+}
+
+.row{
+    width: 70%;
+    margin-left: 15%;
+    margin-bottom: 2%;
+}
+
+.col1{
+    width: 10%;
+    display: inline;
+    float: left;
+}
+
+.col2{
+    width: 80%;
+    display: inline;
+    float: left;
+}
+.col3{
+    width: 10%;
+    display: inline;
+    float: left;
+}
+
+/*add a product*/
+
+.userproduct{
+    padding: 10px;
+    margin: 15px;
+}
+
+.userproduct button{
+    padding: 10px;
+    width: 90px;
+    height: 45px;
+    border-radius: 10px;
+    background-color:#d8ff00;
+    border-color: #d8ff00;
+    border-style: none;
+    box-shadow: 2px 2px 10px #7b7b7b;
+}
+
+.userproduct input{
+    padding: 10px;
+    border-color: #8900ff;
+    border-radius: 10px;
+    background-color: #f5f5f5;
+    border-width: 5px;
+    box-shadow: 2px 2px 10px #7b53ff;
+}
+
+#proname{
+    width: 60%;
+}
+#qty{
+    width: 25%;
+}
+
+/*drop down options*/
+.options{
+    background: linear-gradient(to left,#6E05C8, #2479FE);
+    color: aliceblue;
+    border-radius: 10px;
+    padding: 10px;
+    transition: width 1s;
+}
+
+.options:hover{
+    background: linear-gradient(to left, #2479FE,#6E05C8);
+
+    width: 82%;
+}
+
+
+.options button{
+    width: 15%;
+    border-radius: 6px;
+    border-style: none;
+    box-shadow: 2px 2px 10px;
+    background-color: #d8ff00;
+    font-size: 130%;
+    font-weight: 600;
+}
+
