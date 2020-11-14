@@ -217,3 +217,32 @@ img:hover{
     font-weight: 600;
 }
 
+/*style for buy now button*/
+
+.buy_button{
+    margin-left: 5%;
+    width:90%;
+    padding: 5px;
+    font-family: monospace;
+    font-weight: 600;
+    background: linear-gradient(to bottom right,#4eff00,#00ffa7);
+    border-style: none;
+    border-radius: 10px;
+    font-size: 40px;
+    letter-spacing: 15px;
+    box-shadow: 1px 2px 15px #918dff;
+    color:#ffffff;
+    outline:none
+}
+
+.buy_button:hover,
+.buy_button:focus{background: linear-gradient(to bottom right,#00ffba,#a7ff00);
+    outline:none
+}
+
+.buy_button:active{
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+  outline:none
+}

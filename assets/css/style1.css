@@ -217,3 +217,10 @@ img:hover{
     font-weight: 600;
 }
 
+/*style for buy now button*/
+
+#buy{
+    padding: 10px;
+    font-size: 120%;
+}
+
