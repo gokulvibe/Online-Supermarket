@@ -295,5 +295,5 @@ img:hover{
 /*setting up the loader for the page*/
 #loader{
     width: 100%;
-    height: 100vh;
+    height: 50px;
 }

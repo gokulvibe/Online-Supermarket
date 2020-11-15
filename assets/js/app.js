@@ -3,18 +3,55 @@ var addbar = false;
 
 console.log('after diwali');
 
-//code for loader
-document.onreadystatechange = function() { 
-    if (document.readyState !== "complete") { 
-        document.querySelector("body").style.visibility = "hidden"; 
-        document.querySelector("#loader").style.visibility = "visible"; 
-    } else { 
-        document.querySelector("#loader").style.display = "none"; 
-        document.querySelector("body").style.visibility = "visible"; 
-    } 
-};
+//code for artificial loader
+
+const load = `<div class="preset">
+	    <div class="wrapper">
+	      <ul>
+	        <li></li>
+	        <li></li>
+	        <li></li>
+	        <li></li>
+	        <li></li>
+	        <li></li>
+	        <li></li>
+	        <li></li>
+	        <li></li>
+	        <li></li>
+	        <li></li>
+	        <li></li>
+	        <li></li>
+	        <li></li>
+	        <li></li>
+	        <li></li>
+	        <li></li>
+	        <li></li>
+	        <li></li>
+	        <li></li>
+	        <li></li>
+	        <li></li>
+	        <li></li>
+	        <li></li>
+	        <li></li>
+	      </ul>
+    </div>
+  </div>`;
+
+//procedure for artificial loader
+document.querySelector("body").style.visibility = "hidden";
+document.getElementById("loader").insertAdjacentHTML("afterbegin",load);
+document.querySelector("#loader").style.visibility = "visible";
+ 
+setTimeout(function () {
+    document.querySelector("#loader").style.display = "none"; 
+    document.querySelector("body").style.visibility = "visible"; 
+    }, 3000);
+
+
 
 document.getElementById("addbtn").addEventListener('click', ()=>{ 
+    var Value=JSON.parse(document.getElementById("products-data").textContent);
+    console.log(Value);
     const addbtn = `
         <div class="userproduct">
             <div class="form-control-lg">
