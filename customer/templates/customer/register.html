@@ -7,10 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link href="{% static 'css/loadingstyle.css' %}" rel="stylesheet">
   <link href="{% static 'css/style1.css' %}" rel="stylesheet">
 </head>
 
 <body>
+    <div id="loader">
+    	
+    </div>
+    
     <div class="container">
         <h2>Shopping Cart</h2>
         <h4>Register</h4>
@@ -32,7 +37,7 @@
             <button type="submit" class="btn btn-primary">Register</button>
         </form>
     </div>
-    
+    <script src="{%static 'js/app.js'%}"></script>
 </body>
 
 </html>

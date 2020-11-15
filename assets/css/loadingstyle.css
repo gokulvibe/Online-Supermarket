@@ -1,4 +1,4 @@
-body {
+body .preset{
   display: -webkit-box;
   display: flex;
   height: 100vh;

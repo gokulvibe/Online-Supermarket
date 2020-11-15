@@ -3,6 +3,17 @@ var addbar = false;
 
 console.log('after diwali');
 
+//code for loader
+document.onreadystatechange = function() { 
+    if (document.readyState !== "complete") { 
+        document.querySelector("body").style.visibility = "hidden"; 
+        document.querySelector("#loader").style.visibility = "visible"; 
+    } else { 
+        document.querySelector("#loader").style.display = "none"; 
+        document.querySelector("body").style.visibility = "visible"; 
+    } 
+};
+
 document.getElementById("addbtn").addEventListener('click', ()=>{ 
     const addbtn = `
         <div class="userproduct">
@@ -80,6 +91,10 @@ function loadResult(name,id)
 //creating a function to search for the matching results and load them
 function searchResult()
 {
+    //unload the not found message
+    let div = document.getElementById("noresults");
+    if(div!=null)
+        div.parentNode.removeChild(div);
     userinput = document.getElementById('proname').value;
     let notFound = true;
     for(item in obj)
@@ -94,12 +109,11 @@ function searchResult()
     {
         const block = `
         <div id="noresults" class="animated fadeIn">
-            <img src="{% static 'css/img/cartLogo.png' %}">
+            <img src="{%static 'css/img/cartLogo.png'%}">
             <h2>Opps no results found!</h2>
         </div>
         `;
         document.getElementById("addbtn").insertAdjacentHTML('beforebegin',block);
-        alert("not found");
     }
 }
 
@@ -121,7 +135,7 @@ function generateList()
 }
 
 
-////////////////////////////////////////       DESTRUCTIVE FUNCTIONS //////////////////////////////
+////////////////////////////////////////       DESTRUCTIVE FUNCTIONS             //////////////////////////////
 
 //function to unload all the search results from the window
 function clearSearchResults()
