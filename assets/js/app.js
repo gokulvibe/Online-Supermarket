@@ -1,7 +1,7 @@
 var no = 1,choice = 1;
 var addbar = false;
 
-console.log('after diwali');
+console.log('but its holi');
 
 //code for artificial loader
 
@@ -48,10 +48,12 @@ setTimeout(function () {
     }, 3000);
 
 
+//getting the data from backend
+var stock=JSON.parse(document.getElementById("products-data").textContent);
+console.log(stock);
+
 
 document.getElementById("addbtn").addEventListener('click', ()=>{ 
-    var Value=JSON.parse(document.getElementById("products-data").textContent);
-    console.log(Value);
     const addbtn = `
         <div class="userproduct">
             <div class="form-control-lg">
