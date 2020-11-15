@@ -1,7 +1,7 @@
 var no = 1,choice = 1;
 var addbar = false;
 
-console.log('yes this is still working');
+console.log('after diwali');
 
 document.getElementById("addbtn").addEventListener('click', ()=>{ 
     const addbtn = `
@@ -22,6 +22,11 @@ document.getElementById("addbtn").addEventListener('click', ()=>{
 });
 
 var addrow = (itemname)=>{
+    if(document.getElementById('qty').value == '')
+    {
+        alert('please enter the required quantity');
+        return;
+    }
     const addedrow = `
         <div class="row">
             <div class="col1">
@@ -75,17 +80,51 @@ function loadResult(name,id)
 //creating a function to search for the matching results and load them
 function searchResult()
 {
+    //unload the not found message
+    let div = document.getElementById("noresults");
+    if(div!=null)
+        div.parentNode.removeChild(div);
     userinput = document.getElementById('proname').value;
+    let notFound = true;
     for(item in obj)
     {
         if(item.includes(userinput))
+        {
             loadResult(item,choice++);
+            notFound = false;
+        }
+    }
+    if(notFound)
+    {
+        const block = `
+        <div id="noresults" class="animated fadeIn">
+            <img src="{%static 'css/img/cartLogo.png'%}">
+            <h2>Opps no results found!</h2>
+        </div>
+        `;
+        document.getElementById("addbtn").insertAdjacentHTML('beforebegin',block);
     }
 }
 
+//creating a function to create a object containing all the list item given by the user
+//first assign this function to the buy now button
+document.querySelector(".buy_button").addEventListener("click",generateList);
+
+function generateList()
+{
+    var list = {} //this object data will be passed to the backend
+    var items = document.querySelector(".container2").children;
+    for(let i=2;i<items.length-1;i++)
+    {
+        if(items[i].classList.contains("row"))
+            list[items[i].children[1].innerText] = items[i].children[2].innerText;
+    }
+    //console.log(items[i].children[1].innerText + " " + items[i].children[2].innerText);
+    console.log(list);
+}
 
 
-////////////////////////////////////////       DESTRUCTIVE FUNCTIONS //////////////////////////////
+////////////////////////////////////////       DESTRUCTIVE FUNCTIONS             //////////////////////////////
 
 //function to unload all the search results from the window
 function clearSearchResults()

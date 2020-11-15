@@ -9,9 +9,9 @@
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link href="{% static 'css/style2btn.css' %}" rel="stylesheet">
     <link href="{% static 'css/style1.css' %}" rel="stylesheet">
   
+    
 </head>
 
 <body>
@@ -60,7 +60,12 @@
             <button type="button">ADD</button>
         </div>
         -->
-       
+        <!-- display this when no result is found
+        <div id="noresults" class="animated fadeIn">
+            <img src="{%static 'css/img/cartLogo.png'%}">
+            <h2>Opps no results found!</h2>
+        </div>
+        -->
         <img id="addbtn" src="{%static 'css/img/add.png'%}">
     </div>
     <button type='button' class="buy_button">Buy Now</button>

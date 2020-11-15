@@ -246,3 +246,49 @@ img:hover{
   transform: translateY(4px);
   outline:none
 }
+
+/*style for no results found*/
+.animated {
+    background-image: url(/css/images/logo.png);
+    background-repeat: no-repeat;
+    background-position: left top;
+    padding-top:95px;
+    margin-bottom:60px;
+    -webkit-animation-duration: 5s;
+    animation-duration: 5s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+ }
+
+ @-webkit-keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+ }
+
+ @keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+ }
+
+ .fadeIn {
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+ }
+
+#noresults{
+    padding: 10px;
+    align-content:center;
+}
+#noresults img{
+    display: inline;
+    float: left;
+    width: 7%;
+    padding: 10px;
+    margin-left: 35%;
+}
+
+#noresults h2{
+    padding-top: 20px;
+    
+}
+
