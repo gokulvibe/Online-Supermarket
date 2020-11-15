@@ -50,6 +50,8 @@ setTimeout(function () {
 
 
 document.getElementById("addbtn").addEventListener('click', ()=>{ 
+    var Value=JSON.parse(document.getElementById("products-data").textContent);
+    console.log(Value);
     const addbtn = `
         <div class="userproduct">
             <div class="form-control-lg">

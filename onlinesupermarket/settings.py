@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'customer.apps.CustomerConfig',
+    'products.apps.ProductsConfig',
 ]
 
 MIDDLEWARE = [
@@ -79,7 +80,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'OnlineSupermarket',
         'USER': 'postgres',
-        'PASSWORD': 'happyspydy',
+        'PASSWORD': 'y O u!086!',
         'HOST': 'localhost',
     }
 }
