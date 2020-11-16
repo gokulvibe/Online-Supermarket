@@ -1,7 +1,7 @@
 var no = 1,choice = 1;
 var addbar = false;
 
-console.log('yeah diwali');
+console.log('yeah diwali is over now');
 
 //code for artificial loader
 
@@ -57,7 +57,6 @@ document.getElementById("addbtn").addEventListener('click', ()=>{
         <div class="userproduct">
             <div class="form-control-lg">
                 <input type="Text" id="proname" placeholder="Enter Product name here">
-                <input type="Number" id="qty" placeholder="Enter Product Quantity here">
                 <button class="add">Search</button>
             </div>
         </div>
@@ -70,14 +69,14 @@ document.getElementById("addbtn").addEventListener('click', ()=>{
     }
 });
 
-var addrow = (itemname)=>{
-    if(document.getElementById('qty').value == '')
+var addrow = (itemname,itemid,itemprice,itemquantity,itemDiscount)=>{
+    if(itemquantity == '')
     {
         alert('please enter the required quantity');
         return;
     }
     const addedrow = `
-        <div class="row">
+    <div class="row check">
             <div class="col1">
                 <h1>${no}</h1>
             </div>
@@ -85,8 +84,10 @@ var addrow = (itemname)=>{
                 <h1>${itemname}</h1>
             </div>
             <div class="col3">
-                <h1>${document.getElementById('qty').value}</h1>
+                <h1>${itemquantity}</h1>
             </div>
+            <input type="hidden" name="productId" value=${itemid}>
+            <input type="hidden" name="productdiscount" value=${itemDiscount}>
         </div>
     `;
     no++;
@@ -109,19 +110,34 @@ var obj = {
 };
 
 //creating a function to render search results
-function loadResult(name,id)
+function loadResult(name,id,productid,productprice,productstock,productDiscount)
 {
     var addres = `
-        <div class="row options" id=${'choice'+id}>
+    <div class="row options res" id=${'choice'+id}>
             <div class="col2">
                 <h1>${name}</h1>
+                <h4>Stocks:${productstock}</h4>
+                <h4>Rs ${productprice}</h4>
             </div>
+            <input class="proqty" type="Number" placeholder="Quantity">
             <button type="button">ADD</button>
+            <input type="hidden" name="productId" value=${productid}>
+            <input type="hidden" name="productdiscount" value=${productDiscount}>
         </div>
     `;
     document.getElementById("addbtn").insertAdjacentHTML('beforebegin',addres);
-    document.getElementById("choice"+id).addEventListener('click',(e)=>{
-        addrow(document.getElementById('choice'+id).children[0].children[0].innerText);
+    document.getElementById("choice"+id).children[2].addEventListener('click',(e)=>{
+        let ele = document.getElementById('choice'+id);
+        if(ele.children[1].value > parseInt(ele.children[0].children[1].innerText.substr(7))){
+            alert("Please Enter a valid stock quantity");
+            return;
+        }
+            
+        addrow(ele.children[0].children[0].innerText,
+              ele.children[3].value,
+              ele.children[0].children[2],
+              ele.children[1].value,
+              ele.children[4].value);
         clearSearchResults();
     });
 }
@@ -138,9 +154,13 @@ function searchResult()
     stock.forEach((ele,index,array)=>{
         if(ele.fields.product_name.includes(userinput))
         {
-            loadResult(ele.fields.product_name,choice++);
+            loadResult(ele.fields.product_name,
+                       choice++,
+                      ele.pk,
+                      ele.fields.base_price,
+                      ele.fields.stock_available,
+                      ele.fields.discount);
             notFound = false;
-            console.log(ele.fields.product_name);
         }
     });
     if(notFound)
@@ -166,7 +186,8 @@ function generateList()
     for(let i=2;i<items.length-1;i++)
     {
         if(items[i].classList.contains("row"))
-            list[items[i].children[1].innerText] = items[i].children[2].innerText;
+            if(items[i].classList.contains("check"))
+                list[items[i].children[3].value] = items[i].children[2].innerText;
     }
     //console.log(items[i].children[1].innerText + " " + items[i].children[2].innerText);
     console.log(list);

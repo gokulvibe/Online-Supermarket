@@ -1,7 +1,7 @@
 var no = 1,choice = 1;
 var addbar = false;
 
-console.log('yeah diwali');
+console.log('yeah diwali is over now');
 
 //code for artificial loader
 
@@ -57,7 +57,6 @@ document.getElementById("addbtn").addEventListener('click', ()=>{
         <div class="userproduct">
             <div class="form-control-lg">
                 <input type="Text" id="proname" placeholder="Enter Product name here">
-                <input type="Number" id="qty" placeholder="Enter Product Quantity here">
                 <button class="add">Search</button>
             </div>
         </div>
@@ -70,14 +69,14 @@ document.getElementById("addbtn").addEventListener('click', ()=>{
     }
 });
 
-var addrow = (itemname)=>{
+var addrow = (itemname,itemid,itemprice,itemquantity,itemDiscount)=>{
     if(document.getElementById('qty').value == '')
     {
         alert('please enter the required quantity');
         return;
     }
     const addedrow = `
-        <div class="row">
+    <div class="row">
             <div class="col1">
                 <h1>${no}</h1>
             </div>
@@ -85,8 +84,10 @@ var addrow = (itemname)=>{
                 <h1>${itemname}</h1>
             </div>
             <div class="col3">
-                <h1>${document.getElementById('qty').value}</h1>
+                <h1>${itemquantity}</h1>
             </div>
+            <input type="hidden" name="productId" value=${itemid}>
+            <input type="hidden" name="productdiscount" value=${itemDiscount}>
         </div>
     `;
     no++;
@@ -109,19 +110,29 @@ var obj = {
 };
 
 //creating a function to render search results
-function loadResult(name,id)
+function loadResult(name,id,productid,productprice,productstock,productDiscount)
 {
     var addres = `
-        <div class="row options" id=${'choice'+id}>
+    <div class="row options res" id=${'choice'+id}>
             <div class="col2">
                 <h1>${name}</h1>
+                <h4>Stocks:${productstock}</h4>
+                <h4>${productprice}Rs</h4>
             </div>
+            <input class="qty" type="Number" placeholder="Enter Product Quantity here">
             <button type="button">ADD</button>
+            <input type="hidden" name="productId" value=${productid}>
+            <input type="hidden" name="productdiscount" value=${productDiscount}>
         </div>
     `;
     document.getElementById("addbtn").insertAdjacentHTML('beforebegin',addres);
-    document.getElementById("choice"+id).addEventListener('click',(e)=>{
-        addrow(document.getElementById('choice'+id).children[0].children[0].innerText);
+    document.getElementById("choice"+id).children[2].addEventListener('click',(e)=>{
+        let ele = document.getElementById('choice'+id);
+        addrow(ele.children[0].children[0].innerText,
+              ele.children[4].value,
+              ele.children[0].children[2],
+              ele.children[1].value,
+              ele.children[4].value);
         clearSearchResults();
     });
 }
@@ -138,7 +149,12 @@ function searchResult()
     stock.forEach((ele,index,array)=>{
         if(ele.fields.product_name.includes(userinput))
         {
-            loadResult(ele.fields.product_name,choice++);
+            loadResult(ele.fields.product_name,
+                       choice++,
+                      ele.pk,
+                      ele.fields.base_price,
+                      ele.fields.stock_available,
+                      ele.fields.discount);
             notFound = false;
             console.log(ele.fields.product_name);
         }

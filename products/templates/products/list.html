@@ -22,11 +22,11 @@
 
     <div id="Account">
         {% if user.is_authenticated%}
-        <li>Hello,{{user.first_name}}</li>
-        <li><a href="/logout">Logout</a></li>
+        <h3>Hello,{{user.first_name}}</h3>
+        <h3><a href="/logout">Logout</a></h3>
         {% else %}
-        <li><a href="/register">Register</a></li>
-        <li><a href="/">Login</a></li>
+        <h3><a href="/register">Register</a></h3>
+        <h3><a href="/">Login</a></h3>
         <h1>You have to be logged in to purchase products</h1>
         {% endif %}
     </div>
@@ -82,6 +82,33 @@
         <div id="noresults" class="animated fadeIn">
             <img src="{%static 'css/img/cartLogo.png'%}">
             <h2>Opps no results found!</h2>
+        </div>
+        -->
+        <!--modified blocks
+        <div class="row options res" id='choice'+7>
+            <div class="col2">
+                <h1>samplesdd</h1>
+                <h4>Stocks:2</h4>
+                <h4>1000 Rs</h4>
+            </div>
+            <input class="qty" type="Number" id="qty" placeholder="Enter Product Quantity here">
+            <button type="button">ADD</button>
+            <input type="hidden" name="productId" value="3487">
+            <input type="hidden" name="productdiscount" value="10">
+        </div>
+        
+        <div class="row">
+            <div class="col1">
+                <h1>no</h1>
+            </div>
+            <div class="col2">
+                <h1>name</h1>
+            </div>
+            <div class="col3">
+                <h1>12</h1>
+            </div>
+            <input type="hidden" name="productId" value="3487">
+            <input type="hidden" name="productdiscount" value="10">
         </div>
         -->
         <img id="addbtn" src="{%static 'css/img/add.png'%}">
