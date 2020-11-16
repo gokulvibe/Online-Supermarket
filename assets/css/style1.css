@@ -110,6 +110,12 @@ img:hover{
     margin-top: 3%;
 }
 
+/*register button*/
+.register_btn{
+    padding: 10px;
+    font-size: 30px;
+    background: #ddd;
+}
 
 /*list*/
 .container2{
@@ -128,6 +134,7 @@ img:hover{
     width: 15%;
     height: auto;
     margin-left: 43%;
+    display: block;
 }
 
 .mid{
@@ -232,7 +239,8 @@ img:hover{
     letter-spacing: 15px;
     box-shadow: 1px 2px 15px #918dff;
     color:#ffffff;
-    outline:none
+    outline:none;
+    display: block;
 }
 
 .buy_button:hover,

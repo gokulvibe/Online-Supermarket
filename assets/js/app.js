@@ -1,7 +1,7 @@
 var no = 1,choice = 1;
 var addbar = false;
 
-console.log('but its holi');
+console.log('yeah diwali');
 
 //code for artificial loader
 
@@ -51,7 +51,6 @@ setTimeout(function () {
 //getting the data from backend
 var stock=JSON.parse(document.getElementById("products-data").textContent);
 console.log(stock);
-
 
 document.getElementById("addbtn").addEventListener('click', ()=>{ 
     const addbtn = `
@@ -136,14 +135,14 @@ function searchResult()
         div.parentNode.removeChild(div);
     userinput = document.getElementById('proname').value;
     let notFound = true;
-    for(item in obj)
-    {
-        if(item.includes(userinput))
+    stock.forEach((ele,index,array)=>{
+        if(ele.fields.product_name.includes(userinput))
         {
-            loadResult(item,choice++);
+            loadResult(ele.fields.product_name,choice++);
             notFound = false;
+            console.log(ele.fields.product_name);
         }
-    }
+    });
     if(notFound)
     {
         const block = `

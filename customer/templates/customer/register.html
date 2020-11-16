@@ -19,23 +19,45 @@
     <div class="container">
         <h2>Shopping Cart</h2>
         <h4>Register</h4>
-        <form class="box register">
+        <form class="box register" method="get" id="registerform">
             <div class="form-group">
-                <label for="first_name">First Name</label>
-                <input class="form-control" type="text" name="first_name" placeholder="First Name">
+                <label for="name">Full Name</label>
+                <input class="form-control" type="text" name="name" placeholder="Full Name" required>
             </div>
             
             <div class="form-group">
-                <label for="last_name">Last Name</label>
-                <input class="form-control" type="text" name="last_name" placeholder="Last Name">
+                <label for="phone">Phone Number</label>
+                <input class="form-control" type="text" name="phone" placeholder="Phone Number" required>
             </div>
             
             <div class="form-group">
-                <label for="password">password</label>
-                <input class="form-control" type="text" name="password" placeholder="Password">
+                <label for="address">Full Address</label>
+                <input class="form-control" type="text" name="address" placeholder="Full Address" required>
             </div>
-            <button type="submit" class="btn btn-primary">Register</button>
+            
+            <div class="form-group">
+                <label for="city">City</label>
+                <input class="form-control" type="text" name="city" placeholder="City" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="zip">Zip</label>
+                <input class="form-control" type="text" name="zip" placeholder="Zip Code" required>
+            </div>
+            
+            <p>Address Type</p>
+                <div class="radio">
+                  <input type="radio" id="home" name="type" value="home" checked="checked">
+                  <label for="home">Home</label><br>
+                  <input type="radio" id="office" name="type" value="office">
+                  <label for="office">Office</label>
+                </div>
+            <div class="form-group">
+                <label for="password">New Password</label>
+                <input class="form-control" type="text" name="password" placeholder="New Password" required>
+            </div>
         </form>
+        <button type="submit" form="registerform" value="Submit" class="register_btn">Register</button>
     </div>
     <script src="{%static 'js/app.js'%}"></script>
 </body>

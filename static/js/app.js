@@ -1,7 +1,7 @@
 var no = 1,choice = 1;
 var addbar = false;
 
-console.log('but its diwali');
+console.log('yeah diwali');
 
 //code for artificial loader
 
