@@ -19,10 +19,16 @@
     <div class="container">
         <h2>Shopping Cart</h2>
         <h4>Register</h4>
-        <form class="box register" method="get" id="registerform">
+        <form class="box register" action = "register" method="post" id="registerform">
+            {% csrf_token%}
             <div class="form-group">
-                <label for="name">Full Name</label>
-                <input class="form-control" type="text" name="name" placeholder="Full Name" required>
+                <label for="first_name">First Name</label>
+                <input class="form-control" type="text" name="first_name" placeholder="First Name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="last_name">Last Name</label>
+                <input class="form-control" type="text" name="last_name" placeholder="Last Name" required>
             </div>
             
             <div class="form-group">
@@ -47,14 +53,18 @@
             
             <p>Address Type</p>
                 <div class="radio">
-                  <input type="radio" id="home" name="type" value="home" checked="checked">
+                  <input type="radio" id="home" name="address_type" value="HOME" checked="checked">
                   <label for="home">Home</label><br>
-                  <input type="radio" id="office" name="type" value="office">
+                  <input type="radio" id="office" name="address_type" value="OFFICE">
                   <label for="office">Office</label>
                 </div>
             <div class="form-group">
-                <label for="password">New Password</label>
-                <input class="form-control" type="text" name="password" placeholder="New Password" required>
+                <label for="password1">New Password</label>
+                <input class="form-control" type="password" name="password1" placeholder="New Password" required>
+            </div>
+            <div class="form-group">
+                <label for="password2">Confirm Password</label>
+                <input class="form-control" type="password" name="password2" placeholder="Confirm Password" required>
             </div>
         </form>
         <button type="submit" form="registerform" value="Submit" class="register_btn">Register</button>
