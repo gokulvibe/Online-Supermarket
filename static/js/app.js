@@ -128,7 +128,7 @@ function loadResult(name,id,productid,productprice,productstock,productDiscount)
     document.getElementById("addbtn").insertAdjacentHTML('beforebegin',addres);
     document.getElementById("choice"+id).children[2].addEventListener('click',(e)=>{
         let ele = document.getElementById('choice'+id);
-        if(ele.children[1].value > parseInt(ele.children[0].children[1].innerText.substr(7))){
+        if(ele.children[1].value > parseInt(ele.children[0].children[1].innerText.substr(7)) || ele.children[1].value<=0 ){
             alert("Please Enter a valid stock quantity");
             return;
         }

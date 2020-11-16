@@ -363,7 +363,9 @@ img:hover{
     margin-right: 20px;
 }
 
-
+.newAccount{
+    color: #0045ff;
+}
 /**********for error message*****************/
 #ErrorMessage{
     text-align: center;
