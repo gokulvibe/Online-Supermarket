@@ -4,7 +4,23 @@ from django.contrib import messages
 from .models import Address
 
 def home(request):
-    return render(request,"customer/login.html")
+    if request.user.is_authenticated:
+        return render(request, 'products/list.html')
+    
+    else:
+        if request.method=="POST":
+            username=request.POST["phone"]
+            password=request.POST["password"]
+            user=auth.authenticate(username=username,password=password)
+            
+            if user is not None:
+                auth.login(request,user)
+                return redirect("products/list")
+            else:
+                messages.info(request,"Invalid Credentials")
+                return redirect('/')
+        else:
+            return render(request,'customer/login.html')
 
 def register(request):
     if request.method=='POST':
@@ -21,7 +37,7 @@ def register(request):
         
         if password1==password2:
             if User.objects.filter(username=username).exists():
-                messages.info(request,'Username Taken')
+                messages.info(request,'Account with the given mobile number already exists, please try to login instead.')
                 return redirect('register')
             else:
                 user=User.objects.create_user(username=username,password=password1,first_name=first_name,last_name=last_name)
@@ -31,7 +47,12 @@ def register(request):
                 return redirect('/')
         else:
             messages.info(request,'Passwords do not match')
-            return redirect('/')
+            return redirect('register')
         
     else:
         return render(request,'customer/register.html')
+    
+    
+def logout(request):
+    auth.logout(request)
+    return redirect('/')

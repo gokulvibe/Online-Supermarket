@@ -24,18 +24,26 @@
         <img src="{% static 'css/img/img-01.webp' %}">
         
         <div class="box">
-            <form action="list.html" method="get" id="loginform">
+            <form action="" method="POST" id="loginform">
+              {% csrf_token%}
               <div class="form-group">
-                <label for="name">Phone Number</label>
-                <input type="text" class="form-control" id="phone" placeholder="Phone Number">
+                <label for="phone">Phone Number</label>
+                <input type="text" class="form-control" id="phone" name="phone" placeholder="Phone Number">
               </div>
               <div class="form-group">
-                <label for="pass">Password</label>
-                <input type="password" class="form-control" id="pass" placeholder="Password">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" name="password" placeholder="Password">
               </div>
             </form>
             <button type="submit" form="loginform" value="Submit" class="btn btn-primary addon">Submit</button>
         </div>
+
+        <div id="ErrorMessage">
+          {% for message in messages %}
+          <h1>{{message}}</h1>
+          {% endfor %}
+      </div>
+
         <a class="newAccount" href="register.html">Create a new account</a>
     </div>
     

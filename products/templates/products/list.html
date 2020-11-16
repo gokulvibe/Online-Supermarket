@@ -18,8 +18,21 @@
     <div id="loader">
     	
     </div>
+
+
+    <div id="Account">
+        {% if user.is_authenticated%}
+        <li>Hello,{{user.first_name}}</li>
+        <li><a href="/logout">Logout</a></li>
+        {% else %}
+        <li><a href="/register">Register</a></li>
+        <li><a href="/">Login</a></li>
+        <h1>You have to be logged in to purchase products</h1>
+        {% endif %}
+    </div>
     
-    
+
+
     <div class="container2">
         <div class="row">
             <div class="col1">
