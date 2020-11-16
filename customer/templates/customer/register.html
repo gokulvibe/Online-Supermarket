@@ -68,13 +68,15 @@
             </div>
         </form>
         <button type="submit" form="registerform" value="Submit" class="register_btn">Register</button>
-    </div>
-
-    <div id="ErrorMessage">
+        
+        <div id="ErrorMessage">
         {% for message in messages %}
         <h1>{{message}}</h1>
         {% endfor %}
     </div>
+        
+    </div>
+
 
     <script src="{%static 'js/app.js'%}"></script>
 </body>

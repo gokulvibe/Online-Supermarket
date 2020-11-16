@@ -340,3 +340,33 @@ img:hover{
     font-family: sans-serif;
     font-weight: 600;
 }
+
+/*backend data formatting*/
+
+#Account{
+    background: linear-gradient(to right,rgba(0, 255, 196, 0.24),rgba(0, 186, 255, 0.25));
+    box-shadow: 2px 2px 10px;
+    display: block;
+    padding: 2%;
+}
+
+
+#Account h1{
+    color: floralwhite;
+    display: block;
+    font-size: 16px;
+}
+
+#Account h3,a{
+    display: inline;
+    color: #d8ff00;
+    margin-right: 20px;
+}
+
+
+/**********for error message*****************/
+#ErrorMessage{
+    text-align: center;
+    padding: 5px;
+    color: #ff2525;
+}

@@ -38,14 +38,16 @@
             <button type="submit" form="loginform" value="Submit" class="btn btn-primary addon">Submit</button>
         </div>
 
-        <div id="ErrorMessage">
-          {% for message in messages %}
-          <h1>{{message}}</h1>
-          {% endfor %}
-      </div>
-
         <a class="newAccount" href="register">Create a new account</a>
+        
+        <div id="ErrorMessage">
+            {% for message in messages %}
+            <h1>{{message}}</h1>
+            {% endfor %}
+        </div>
     </div>
+    
+    
     
     <script src="{%static 'js/app.js'%}"></script>
 </body>
