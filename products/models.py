@@ -8,7 +8,7 @@ class ProductType(models.Model):
     
     
 class Product(models.Model):
-    product_id = models.IntegerField(primary_key = True)
+    product_id = models.PositiveIntegerField(primary_key = True)
     product_name = models.CharField(max_length = 100)
     product_type_id = models.ForeignKey(ProductType, null = True, on_delete=models.SET_NULL)
     stock_available = models.PositiveIntegerField()
