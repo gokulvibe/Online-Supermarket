@@ -1,7 +1,7 @@
 var no = 1,choice = 1;
 var addbar = false;
 
-console.log('yeah diwali is over now');
+console.log('exams are over now');
 
 //code for artificial loader
 
@@ -167,8 +167,7 @@ function searchResult()
     {
         const block = `
         <div id="noresults" class="animated fadeIn">
-            <img src="{%static 'css/img/cartLogo.png'%}">
-            <h2>Opps no results found!</h2>
+            <h2>:( Opps no results found!</h2>
         </div>
         `;
         document.getElementById("addbtn").insertAdjacentHTML('beforebegin',block);
@@ -191,8 +190,20 @@ function generateList()
     }
     //console.log(items[i].children[1].innerText + " " + items[i].children[2].innerText);
     console.log(list);
+    
+    sendData(list);
 }
 
+
+////////////////////////  AJAX ///////////////////////////////
+
+function sendData(list){
+    $.ajax({
+        type: 'POST',
+        url: '/products/invoice/',
+        data: {'list': list},
+    });
+}
 
 ////////////////////////////////////////       DESTRUCTIVE FUNCTIONS             //////////////////////////////
 
