@@ -14,4 +14,5 @@ class Solddetails(models.Model):
     customer_phone = models.ForeignKey(User, on_delete=models.CASCADE)
     product_id = models.ForeignKey(Product, null=True, on_delete=models.SET_NULL)
     quantity = models.PositiveIntegerField()
+    cost = models.FloatField()
     
