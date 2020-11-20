@@ -190,7 +190,6 @@ function generateList()
     }
     //console.log(items[i].children[1].innerText + " " + items[i].children[2].innerText);
     console.log(list);
-    
     sendData(list);
 }
 
@@ -200,8 +199,12 @@ function generateList()
 function sendData(list){
     $.ajax({
         type: 'POST',
-        url: '/products/invoice/',
-        data: {'list': list},
+        url: '/sales/billing',
+        data: {'data': JSON.stringify(list), csrfmiddlewaretoken: document.getElementById("csrf").value},
+    }).done(function (data) {
+        if (data.success) {
+            window.location.href = "/";
+        }    
     });
 }
 
