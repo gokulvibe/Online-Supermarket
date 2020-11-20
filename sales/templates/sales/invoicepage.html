@@ -1,0 +1,176 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Shopping List</title>
+  <meta name="author" content="">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">  
+<link href="{% static 'css/style2.css' %}" rel="stylesheet">
+<link href="{% static 'css/loadingstyle.css' %}" rel="stylesheet">
+</head>
+
+<body>
+    <div id="loader">
+    	
+    </div>
+    
+    <h1>INVOICE</h1>
+    <img class="thanks" src="{% static 'css/img/thanks2.png'%}">
+    <div class="container">
+        <h2>INVOICE</h2>
+        <hr>
+        <div class="custinfo">
+            <p>BILL TO: [Customer Name]</p>
+            <p>INVOICE NUMBER: [number]</p>
+            <p>DATE: [date]</p>
+        </div>
+        <div class="billinfo">
+            <div class="inrow head">
+                <div class="col1">
+                    <p>Description</p>
+                </div>
+                <div class="col2">
+                    <p>Quantity</p>
+                </div>
+                <div class="col3">
+                    <p>Amount</p>
+                </div>
+            </div>
+            
+            <div class="inrow">
+                <div class="col1">
+                    <p>[Item Name]</p>
+                </div>
+                <div class="col2">
+                    <p>[Quantity]</p>
+                </div>
+                <div class="col3">
+                    <p>[Amount]</p>
+                </div>
+            </div>
+            
+            <div class="inrow">
+                <div class="col1">
+                    <p>[Item Name]</p>
+                </div>
+                <div class="col2">
+                    <p>[Quantity]</p>
+                </div>
+                <div class="col3">
+                    <p>[Amount]</p>
+                </div>
+            </div>
+            
+            <div class="inrow">
+                <div class="col1">
+                    <p>[Item Name]</p>
+                </div>
+                <div class="col2">
+                    <p>[Quantity]</p>
+                </div>
+                <div class="col3">
+                    <p>[Amount]</p>
+                </div>
+            </div>
+            
+            <div class="inrow">
+                <div class="col1">
+                    <p>[Item Name]</p>
+                </div>
+                <div class="col2">
+                    <p>[Quantity]</p>
+                </div>
+                <div class="col3">
+                    <p>[Amount]</p>
+                </div>
+            </div>
+            
+            <div class="inrow">
+                <div class="col1">
+                    <p>[Item Name]</p>
+                </div>
+                <div class="col2">
+                    <p>[Quantity]</p>
+                </div>
+                <div class="col3">
+                    <p>[Amount]</p>
+                </div>
+            </div>
+            
+            <div class="inrow">
+                <div class="col1">
+                    <p>[Item Name]</p>
+                </div>
+                <div class="col2">
+                    <p>[Quantity]</p>
+                </div>
+                <div class="col3">
+                    <p>[Amount]</p>
+                </div>
+            </div>
+            
+        </div>
+        <hr>
+        
+        <!-- tax and discount-->
+        <div class="inrow">
+                <div class="col1">
+                    <p></p>
+                </div>
+                <div class="col2">
+                    <p>[Tax]</p>
+                </div>
+                <div class="col3">
+                    <p>[Amount]</p>
+                </div>
+        </div>
+        
+        <div class="inrow">
+                <div class="col1">
+                    <p></p>
+                </div>
+                <div class="col2">
+                    <p>[Discount]</p>
+                </div>
+                <div class="col3">
+                    <p>[Amount]</p>
+                </div>
+        </div>
+        
+        <!-- total-->
+        <div class="inrow total">
+                <div class="col1">
+                    <p></p>
+                </div>
+                <div class="col2">
+                    <p>[Total]</p>
+                </div>
+                <div class="col3">
+                    <p>[Amount]</p>
+                </div>
+        </div>
+        
+    </div>
+    
+    <!-- END -->
+    <div class="end">
+        <h1>Keep Shopping</h1>
+        <p>Project by Gokul Raam and Serjeel Ranjan</p>
+    </div>
+    
+    <script type="text/javascript">
+        var image = document.querySelector(".thanks");
+        window.addEventListener('scroll',function(){
+            var value = window.scrollY;
+            let height = document.body.scrollHeight;
+            image.style.left= Math.min(value*0.2,200)+'px';
+        });
+    </script>
+  <script src="{%static 'js/invoice.js'%}"></script>
+</body>
+
+</html>

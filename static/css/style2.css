@@ -1,0 +1,144 @@
+/*pre css*/
+* {
+  margin: 0;
+  padding: 0; 
+  box-sizing: border-box;
+}
+
+
+html {
+  
+  font-size: 16px;
+}
+@media only screen and (max-width: 68.75em) {
+html {
+  font-size: 50%; 
+    } 
+}
+
+body {
+  font-weight: 400;
+  line-height: 1.6;
+  color: #deffc5;
+  background: linear-gradient(to right,#dfffc7,#0080ff);
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+h1{
+    align-content: center;
+    font-size: 4rem;
+    margin:2%;
+    margin-left: 40%;
+    color: #ffffff;
+    text-decoration:overline;
+    letter-spacing: 7px;
+}
+
+.container{
+    background: #fff;
+    margin: 1vh auto;
+    margin-left: 35%;
+    width: 60%;
+    height: auto;
+    padding: 1vh auto;
+    border-radius: 10px;
+    color:#b4b4b4;
+    text-align: center;
+    overflow: hidden;
+    padding-top:20px;
+    padding-bottom:20px;
+}
+
+.container p{
+    font-size: 16px;
+    text-align: left;
+}
+
+.thanks{
+    display: inline;
+    width: 27%;
+    float: left;
+    position: sticky;
+    top: 0px;
+    margin: 0;
+    padding: 0;
+    z-index: 1;
+}
+
+
+.custinfo{
+    background: #4e00ff;
+    color: aliceblue;
+    padding: 3%;
+    border-radius: 5px;
+}
+/***************************************/
+
+.billinfo{
+      max-width: 1000%;
+      height: auto;
+      margin: 1vw auto;
+      border-radius: 20px;
+      overflow: hidden;
+      align-content: center;
+      padding: 3%;
+}
+
+
+.head{
+    color: #ff0076;
+}
+
+.head p{
+    font-weight: 700;
+}
+
+.col1{
+    display: inline;
+    text-align: left;
+    width: 60%;
+    float: left;
+}
+
+.col2{
+    display: inline;
+    text-align: left;
+    width: 20%;
+    float: left;
+}
+
+
+.col3{
+    display: inline;
+    text-align: left;
+    width: 20%;
+    float: left;
+}
+
+.total{
+    font-weight: 700;
+}
+
+
+/***********************************/
+
+.end{
+    margin-top: 80px;
+    height: 200px;
+    background: linear-gradient(to right,rgba(0, 255, 98, 0.36),rgba(167, 255, 0, 0.38));
+    position: relative;
+}
+
+.end h1{
+    text-decoration: none;
+    font-weight: 900;
+    letter-spacing: 15px;
+}
+
+.end p{
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+}

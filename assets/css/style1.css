@@ -176,6 +176,7 @@ img:hover{
 .userproduct{
     padding: 10px;
     margin: 15px;
+    margin-left: 23%;
 }
 
 
@@ -197,7 +198,6 @@ img:hover{
     background-color: #f5f5f5;
     border-width: 5px;
     box-shadow: 2px 2px 10px #7b53ff;
-    margin-left: 70px;
 }
 
 #proname{
@@ -224,7 +224,7 @@ img:hover{
 
 
 .options button{
-    width: 15%;
+    width: 10%;
     border-radius: 6px;
     border-style: none;
     box-shadow: 2px 2px 10px;
@@ -306,7 +306,7 @@ img:hover{
 
 #noresults h2{
     padding-top: 20px;
-    
+    margin-left: 38%;
 }
 
 /*setting up the loader for the page*/
@@ -316,29 +316,59 @@ img:hover{
 }
 
 /*quatity box for search results*/
-.qty{
+.proqty{
     margin-right: 5px;
     display: inline;
     border-radius: 5px;
     padding: 10px;
-    
+    width: 15%;
 }
 
 .res .col2{
     display: inline;
-    width: 50%;
+    width: 70%;
 }
 
 .res .col2 h1,h4{
     display: inline;
 }
-.res .col2 h1{
-    font-size: 20px;
-}
+
 
 .res .col2 h4{
     margin-left: 10%;
     color: #d8ff00;
     font-family: sans-serif;
     font-weight: 600;
+}
+
+/*backend data formatting*/
+
+#Account{
+    background: linear-gradient(to right,rgba(0, 255, 196, 0.24),rgba(0, 186, 255, 0.25));
+    box-shadow: 2px 2px 10px;
+    display: block;
+    padding: 2%;
+}
+
+
+#Account h1{
+    color: floralwhite;
+    display: block;
+    font-size: 16px;
+}
+
+#Account h3,a{
+    display: inline;
+    color: #d8ff00;
+    margin-right: 20px;
+}
+
+.newAccount{
+    color: #0045ff;
+}
+/**********for error message*****************/
+#ErrorMessage{
+    text-align: center;
+    padding: 5px;
+    color: #ff2525;
 }

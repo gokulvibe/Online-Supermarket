@@ -1,7 +1,7 @@
 var no = 1,choice = 1;
 var addbar = false;
 
-console.log('yeah diwali is over now');
+console.log('exams are over now');
 
 //code for artificial loader
 
@@ -70,13 +70,13 @@ document.getElementById("addbtn").addEventListener('click', ()=>{
 });
 
 var addrow = (itemname,itemid,itemprice,itemquantity,itemDiscount)=>{
-    if(document.getElementById('qty').value == '')
+    if(itemquantity == '')
     {
         alert('please enter the required quantity');
         return;
     }
     const addedrow = `
-    <div class="row">
+    <div class="row check">
             <div class="col1">
                 <h1>${no}</h1>
             </div>
@@ -117,9 +117,9 @@ function loadResult(name,id,productid,productprice,productstock,productDiscount)
             <div class="col2">
                 <h1>${name}</h1>
                 <h4>Stocks:${productstock}</h4>
-                <h4>${productprice}Rs</h4>
+                <h4>Rs ${productprice}</h4>
             </div>
-            <input class="qty" type="Number" placeholder="Enter Product Quantity here">
+            <input class="proqty" type="Number" placeholder="Quantity">
             <button type="button">ADD</button>
             <input type="hidden" name="productId" value=${productid}>
             <input type="hidden" name="productdiscount" value=${productDiscount}>
@@ -128,8 +128,13 @@ function loadResult(name,id,productid,productprice,productstock,productDiscount)
     document.getElementById("addbtn").insertAdjacentHTML('beforebegin',addres);
     document.getElementById("choice"+id).children[2].addEventListener('click',(e)=>{
         let ele = document.getElementById('choice'+id);
+        if(ele.children[1].value > parseInt(ele.children[0].children[1].innerText.substr(7)) || ele.children[1].value<=0 ){
+            alert("Please Enter a valid stock quantity");
+            return;
+        }
+            
         addrow(ele.children[0].children[0].innerText,
-              ele.children[4].value,
+              ele.children[3].value,
               ele.children[0].children[2],
               ele.children[1].value,
               ele.children[4].value);
@@ -156,15 +161,13 @@ function searchResult()
                       ele.fields.stock_available,
                       ele.fields.discount);
             notFound = false;
-            console.log(ele.fields.product_name);
         }
     });
     if(notFound)
     {
         const block = `
         <div id="noresults" class="animated fadeIn">
-            <img src="{%static 'css/img/cartLogo.png'%}">
-            <h2>Opps no results found!</h2>
+            <h2>:( Opps no results found!</h2>
         </div>
         `;
         document.getElementById("addbtn").insertAdjacentHTML('beforebegin',block);
@@ -182,12 +185,28 @@ function generateList()
     for(let i=2;i<items.length-1;i++)
     {
         if(items[i].classList.contains("row"))
-            list[items[i].children[1].innerText] = items[i].children[2].innerText;
+            if(items[i].classList.contains("check"))
+                list[items[i].children[3].value] = items[i].children[2].innerText;
     }
     //console.log(items[i].children[1].innerText + " " + items[i].children[2].innerText);
     console.log(list);
+    sendData(list);
 }
 
+
+////////////////////////  AJAX ///////////////////////////////
+
+function sendData(list){
+    $.ajax({
+        type: 'POST',
+        url: '/sales/billing',
+        data: {'data': JSON.stringify(list), csrfmiddlewaretoken: document.getElementById("csrf").value},
+    }).done(function (data) {
+        if (data.success) {
+            window.location.href = "/";
+        }    
+    });
+}
 
 ////////////////////////////////////////       DESTRUCTIVE FUNCTIONS             //////////////////////////////
 
