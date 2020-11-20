@@ -2,10 +2,17 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.models import User,auth
 from django.contrib import messages
 from .models import Address
+from django.http import HttpResponse
+from products.models import Product
+from django.core import serializers
+import json
 
 def home(request):
     if request.user.is_authenticated:
-        return render(request, 'products/list.html')
+        products = Product.objects.all()
+        tmpJson = serializers.serialize("json",products)
+        tmpObj = json.loads(tmpJson)
+        return render(request,"products/list.html", context = {'products':tmpObj})
     
     else:
         if request.method=="POST":
