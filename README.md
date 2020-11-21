@@ -10,4 +10,4 @@ This project is a website that allows a user to login and buy various products a
 * PostgreSQL
 
 ***
-This project was done by _Gokul Raam_ and _Serjeel Ranjan_
+This project was done by ***Gokul Raam*** and ***Serjeel Ranjan***
