@@ -138,6 +138,7 @@ function loadResult(name,id,productid,productprice,productstock,productDiscount)
               ele.children[0].children[2],
               ele.children[1].value,
               ele.children[4].value);
+        
         clearSearchResults();
     });
 }

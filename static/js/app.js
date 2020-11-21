@@ -137,6 +137,10 @@ function loadResult(name,id,productid,productprice,productstock,productDiscount)
                 item.fields.stock_available -= ele.children[1].value;
         });
 
+        let amount = parseInt(document.getElementById("amt").innerText);
+        amount += ele.children[1].value*parseInt(ele.children[0].children[2].innerText.substring(2));
+        document.getElementById("amt").innerText = amount;
+        
         addrow(ele.children[0].children[0].innerText,
               ele.children[3].value,
               ele.children[0].children[2],

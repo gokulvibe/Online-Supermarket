@@ -372,3 +372,27 @@ img:hover{
     padding: 5px;
     color: #ff2525;
 }
+
+/***************for total amount*********************/
+.total{
+    padding: 1%;
+    margin: 1%;
+    color: #313131;
+    background: #ceff00;
+    margin-left: 75%;
+    border-radius: 50px;
+    display: inline-block;
+    width: 220px;
+    box-shadow: 4px 6px 11px 1px #424242;
+    font-size: 16px;
+    transition: transform .2s;
+}
+
+#amt{
+    color: royalblue;
+    font-size: 20px;
+}
+
+.total:hover{
+    transform: scale(1.2);
+}
