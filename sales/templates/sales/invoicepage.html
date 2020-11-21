@@ -170,6 +170,15 @@
             image.style.left= Math.min(value*0.2,200)+'px';
         });
     </script>
+
+
+    {{ invoice_number|json_script:"invoice_number" }}
+    {{ customer_name|json_script:"customer_name" }}
+    {{ purchase_time|json_script:"purchase_time" }}
+    {{ sold_products_details|json_script:"sold_products_details" }}
+    {{ tax_amount|json_script:"tax_amount" }}
+    {{ total_discount|json_script:"total_discount" }}
+    {{ invoice_amount|json_script:"invoice_amount" }}
   <script src="{%static 'js/invoice.js'%}"></script>
 </body>
 

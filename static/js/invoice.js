@@ -46,6 +46,28 @@ setTimeout(function () {
 
 //getting data from backend
 
+var invoice_number=JSON.parse(document.getElementById("invoice_number").textContent);
+
+var customer_name=JSON.parse(document.getElementById("customer_name").textContent);
+
+var purchase_time=JSON.parse(document.getElementById("purchase_time").textContent);
+
+var sold_products_details=JSON.parse(document.getElementById("sold_products_details").textContent);
+
+var tax_amount=JSON.parse(document.getElementById("tax_amount").textContent);
+
+var total_discount=JSON.parse(document.getElementById("total_discount").textContent);
+
+var invoice_amount=JSON.parse(document.getElementById("invoice_amount").textContent);
+
+console.log(invoice_number)
+console.log(customer_name)
+console.log(purchase_time)
+console.log(sold_products_details)
+console.log(tax_amount)
+console.log(total_discount)
+console.log(invoice_amount)
+console.log("hi")
 //////////////////////////////////////////////
 
 

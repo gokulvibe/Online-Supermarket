@@ -203,7 +203,7 @@ function sendData(list){
         data: {'data': JSON.stringify(list), csrfmiddlewaretoken: document.getElementById("csrf").value},
     }).done(function (data) {
         if (data.success) {
-            window.location.href = "/";
+            window.location.href = "/sales/order";
         }    
     });
 }
