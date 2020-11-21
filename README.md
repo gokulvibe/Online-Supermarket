@@ -1,5 +1,13 @@
-# DBMS PROJECT
+# DBMS PROJECT - An Online Supermarket
 
-This project was done by __Gokul Raam__ and __Serjeel Ranjan__
+This project is a website that allows a user to login and buy various products available in the database and produces an invoice.
+
+## Tech stack used:
+* HTML
+* CSS
+* Javascript (Vanilla JS and a pinch of jQuery)
+* Django
+* PostgreSQL
+
 <hr>
-This project was done as a part of Assignment
+This project was done by __Gokul Raam__ and __Serjeel Ranjan__
