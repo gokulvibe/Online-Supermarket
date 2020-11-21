@@ -194,7 +194,12 @@ function generateList()
     }
     //console.log(items[i].children[1].innerText + " " + items[i].children[2].innerText);
     console.log(list);
-    sendData(list);
+    if (document.getElementById("logdetail").value == "1"){
+        sendData(list);
+    }
+    else{
+        alert("You have to be logged in to purchase products!")
+    }
 }
 
 

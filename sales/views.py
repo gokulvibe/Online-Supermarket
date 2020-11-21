@@ -6,6 +6,7 @@ from products.models import Product
 from django.http import HttpResponse, JsonResponse
 import json
 from django.core import serializers
+import math
 # Create your views here.
 
 def billing(request):
@@ -27,8 +28,10 @@ def billing(request):
         invoice_amount += cost
         total_discount += discount * int(quantity)
         
-    invoice_amount += taxes*invoice_amount
-    tax_amount = taxes*invoice_amount
+    invoice_amount += math.floor(taxes*invoice_amount)
+    tax_amount = math.floor(taxes*invoice_amount)
+    
+    invoice_amount = math.floor(invoice_amount)
         
     #####################################################################################
     

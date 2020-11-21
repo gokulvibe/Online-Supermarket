@@ -117,6 +117,13 @@
     </div>
     <button type='button' class="buy_button">Buy Now</button>
     <input type="hidden" id="csrf" value="{{csrf_token}}">
+    
+    {% if user.is_authenticated%}
+    <input type="hidden" id="logdetail" value="1">
+    {% else %}
+    <input type="hidden" id="logdetail" value="0">
+    {% endif %}
+
   {{ products|json_script:"products-data" }}
   <script src="{%static 'js/app.js'%}"></script>
 </body>
