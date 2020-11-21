@@ -132,7 +132,11 @@ function loadResult(name,id,productid,productprice,productstock,productDiscount)
             alert("Please Enter a valid stock quantity");
             return;
         }
-            
+        stock.forEach((item,ind)=>{
+            if(item.pk == ele.children[3].value)
+                item.fields.stock_available -= ele.children[1].value;
+        });
+
         addrow(ele.children[0].children[0].innerText,
               ele.children[3].value,
               ele.children[0].children[2],
@@ -152,7 +156,7 @@ function searchResult()
     userinput = document.getElementById('proname').value;
     let notFound = true;
     stock.forEach((ele,index,array)=>{
-        if(ele.fields.product_name.includes(userinput))
+        if(ele.fields.product_name.toLowerCase().includes(userinput.toLowerCase()))
         {
             loadResult(ele.fields.product_name,
                        choice++,
