@@ -8,6 +8,7 @@ class Invoice(models.Model):
     invoice_date = models.DateTimeField()
     invoice_amount = models.FloatField()
     taxes = models.FloatField()
+    discount = models.FloatField()
     
 class Solddetails(models.Model):
     invoice_num = models.ForeignKey(Invoice, on_delete=models.CASCADE)
