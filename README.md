@@ -9,5 +9,5 @@ This project is a website that allows a user to login and buy various products a
 * Django
 * PostgreSQL
 
-<hr>
+***
 This project was done by _Gokul Raam_ and _Serjeel Ranjan_
