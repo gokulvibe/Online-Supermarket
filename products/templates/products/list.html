@@ -4,7 +4,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Shopping List</title>
+  <title>SeGo Shopping - Product List</title>
   <meta name="author" content="">
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -24,7 +24,7 @@
 
     <div id="Account">
         {% if user.is_authenticated%}
-        <h3>Hello,{{user.first_name}}</h3>
+        <h3>Hello, {{user.first_name}}</h3>
         <h3><a href="/logout">Logout</a></h3>
         {% else %}
         <h3><a href="/register">Register</a></h3>

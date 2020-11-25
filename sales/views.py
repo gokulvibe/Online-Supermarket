@@ -64,7 +64,7 @@ def billing(request):
     
     request.session['invoice'] = invoice_number
     request.session['name'] = request.user.first_name + " " + request.user.last_name
-    request.session['invoice_date'] = purchase_time.strftime("%d-%m-%Y,%H:%M:%S")
+    request.session['invoice_date'] = purchase_time.strftime("%d-%m-%Y, %H:%M:%S")
     request.session['sold_products_details'] = sold_products_details
     request.session['taxes'] = tax_amount
     request.session['discount'] = total_discount
