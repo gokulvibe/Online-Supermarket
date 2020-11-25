@@ -157,6 +157,8 @@ function searchResult()
     let div = document.getElementById("noresults");
     if(div!=null)
         div.parentNode.removeChild(div);
+    //also remove the previously searched results
+    clearSearchResults();
     userinput = document.getElementById('proname').value;
     let notFound = true;
     stock.forEach((ele,index,array)=>{
