@@ -25,9 +25,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '1@l)v)@dvi9$kfdv#tm1r*)omj%$03zn5z4-muyi0*^ldx(2!b')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-#DEBUG = True
+DEBUG = False
 
-DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
+#DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
 ALLOWED_HOSTS = ['sego-shopping.herokuapp.com', '127.0.0.1']
 
@@ -86,7 +86,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'OnlineSupermarket',
         'USER': 'postgres',
-        'PASSWORD': 'happyspydy',
+        'PASSWORD': 'y O u!086!',
         'HOST': 'localhost',
     }
 }
